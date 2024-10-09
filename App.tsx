@@ -1,11 +1,38 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Button, Text, View } from 'react-native';
+
+import LoginForm from './src/screens/LoginForm';
+
+const Stack = createNativeStackNavigator();
+
+function HomeScreen({ navigation }: any) {
+  return (
+    <View className="flex-1 items-center justify-center bg-white">
+      <Text>Welcome to the Home Screen!</Text>
+      <Button title="Go to Login" onPress={() => navigation.navigate('Login')} />
+      <StatusBar style="light" />
+    </View>
+  );
+}
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen 
+          name="Home" 
+          component={HomeScreen} 
+          options={{ headerShown: false }} 
+        />
+        <Stack.Screen 
+          name="Login" 
+          component={LoginForm} 
+          options={{ headerShown: false }} 
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
