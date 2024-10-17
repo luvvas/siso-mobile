@@ -2,8 +2,14 @@
 module.exports = {
   content: ["./App.{js,jsx,ts,tsx}", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      elevation: {
+        lg: 8,
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-elevation')(['responsive']),
+  ],
 }
 
