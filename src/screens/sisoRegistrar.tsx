@@ -14,7 +14,7 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-export default function RegisterForm({ navigation }: any) {
+export default function SisoRegistrar({ navigation }: any) {
     const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>({
         resolver: zodResolver(schema),
     });

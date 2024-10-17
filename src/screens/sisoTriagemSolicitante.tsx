@@ -2,17 +2,12 @@ import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, SafeAreaView, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function SisoTriagem({ navigation }: any) {
+import SisoHeader from '../components/sisoHeader';
+
+export default function SisoTriagemSolicitante({ navigation }: any) {
   return (
     <SafeAreaView className="flex-1 bg-gray-100">
-      <View className="mt-6 flex-row items-center justify-between px-4 py-4 bg-white shadow-md">
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back" size={24} color="black" />
-        </TouchableOpacity>
-        <Text className="text-xl font-bold">Triagem</Text>
-        <View style={{ width: 24 }} />
-      </View>
-
+      <SisoHeader navigation={navigation} title="Triagem" />
       <ScrollView className="px-4 pt-4">
         <View className="mb-4 bg-white rounded-lg p-4 elevation-sm">
           <Text className="text-lg font-semibold mb-2">Detalhes da Solicitação</Text>

@@ -12,9 +12,9 @@ export default function SisoHome({ navigation }: any) {
                 />
             </View>
             <Button title="Login" onPress={() => navigation.navigate('Login')} />
-            <Button title="Triagem" onPress={() => navigation.navigate('Triagem')} />
-            {/* TODO: IMPLEMENTAR TELA DE REGISTRO  */}
-            {/* <Button title="Registrar" onPress={() => navigation.navigate('Registrar')} /> */}
+            <Button title="Registrar" onPress={() => navigation.navigate('Registrar')} />
+            <Button title="Triagem Solicitante" onPress={() => navigation.navigate('TriagemSolicitante')} />
+            <Button title="Triagem Técnico" onPress={() => navigation.navigate('TriagemTecnico')} />
             <StatusBar style="light" />
         </View>
     );
