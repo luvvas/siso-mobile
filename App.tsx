@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SisoHome from './src/screens/sisoHome';
 import SisoLogin from './src/screens/sisoLogin';
 import SisoTriagem from './src/screens/sisoTriagem';
+import RegisterForm from './src/screens/RegisterForm';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,7 +28,11 @@ export default function App() {
           component={SisoTriagem} 
           options={{ headerShown: false }} 
         />
-        
+        <Stack.Screen 
+          name="Register" 
+          component={RegisterForm} 
+          options={{ headerShown: false }} 
+          />
       </Stack.Navigator>
     </NavigationContainer>
   );
